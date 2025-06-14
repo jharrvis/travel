@@ -1,0 +1,334 @@
+{
+  "search_results": {
+    "route": "London - Dubai",
+    "search_date": "2025-11-30",
+    "flights": [
+      {
+        "id": 1,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "12:35",
+          "departure_airport": "London Stansted (STN)",
+          "arrival_time": "03:50",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "11h 15m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF1988"
+        },
+        "inbound": {
+          "date": "2025-12-05",
+          "departure_time": "06:00",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "14:35",
+          "arrival_airport": "London Stansted (STN)",
+          "duration": "12h 35m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF550"
+        },
+        "price": {
+          "amount": 1459,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 2,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "12:35",
+          "departure_airport": "London Stansted (STN)",
+          "arrival_time": "03:50",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "11h 15m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF1988"
+        },
+        "inbound": {
+          "date": "2025-12-05",
+          "departure_time": "05:10",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "15:20",
+          "arrival_airport": "London Stansted (STN)",
+          "duration": "14h 10m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF144"
+        },
+        "price": {
+          "amount": 1459,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 3,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "12:35",
+          "departure_airport": "London Stansted (STN)",
+          "arrival_time": "03:50",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "11h 15m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF1988"
+        },
+        "inbound": {
+          "date": "2025-12-05",
+          "departure_time": "05:10",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "11:45",
+          "arrival_airport": "London Stansted (STN)",
+          "duration": "10h 35m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF144"
+        },
+        "price": {
+          "amount": 1459,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 4,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "15:25",
+          "departure_airport": "London Stansted (STN)",
+          "arrival_time": "05:00",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "9h 35m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF532"
+        },
+        "inbound": {
+          "date": "2025-12-06",
+          "departure_time": "05:10",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "11:45",
+          "arrival_airport": "London Stansted (STN)",
+          "duration": "10h 35m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF144"
+        },
+        "price": {
+          "amount": 1389,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 5,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "15:25",
+          "departure_airport": "London Stansted (STN)",
+          "arrival_time": "05:00",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "9h 35m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF532"
+        },
+        "inbound": {
+          "date": "2025-12-06",
+          "departure_time": "05:10",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "15:20",
+          "arrival_airport": "London Stansted (STN)",
+          "duration": "14h 10m",
+          "stops": 1,
+          "airline": "ajet",
+          "flight_number": "VF144"
+        },
+        "price": {
+          "amount": 1389,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 6,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "13:45",
+          "departure_airport": "Manchester (MAN)",
+          "arrival_time": "04:55",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "11h 10m",
+          "stops": 1,
+          "airline": "Saudia",
+          "flight_number": "SV124"
+        },
+        "inbound": {
+          "date": "2025-12-06",
+          "departure_time": "04:05",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "11:55",
+          "arrival_airport": "Manchester (MAN)",
+          "duration": "11h 50m",
+          "stops": 1,
+          "airline": "Saudia",
+          "flight_number": "SV599"
+        },
+        "price": {
+          "amount": 1389,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 7,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "13:30",
+          "departure_airport": "Manchester (MAN)",
+          "arrival_time": "03:45",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "10h 15m",
+          "stops": 1,
+          "airline": "Eurowings",
+          "flight_number": "MS782"
+        },
+        "inbound": {
+          "date": "2025-12-05",
+          "departure_time": "06:00",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "12:30",
+          "arrival_airport": "Manchester (MAN)",
+          "duration": "10h 30m",
+          "stops": 1,
+          "airline": "Eurowings",
+          "flight_number": "MS911"
+        },
+        "price": {
+          "amount": 1459,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 8,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "10:05",
+          "departure_airport": "London Gatwick (LGW)",
+          "arrival_time": "00:50",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "10h 45m",
+          "stops": 1,
+          "airline": "Turkish Airlines",
+          "flight_number": "TK1982"
+        },
+        "inbound": {
+          "date": "2025-12-05",
+          "departure_time": "08:40",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "16:10",
+          "arrival_airport": "London Gatwick (LGW)",
+          "duration": "11h 30m",
+          "stops": 1,
+          "airline": "Turkish Airlines",
+          "flight_number": "TK783"
+        },
+        "price": {
+          "amount": 1479,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 9,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "10:05",
+          "departure_airport": "London Gatwick (LGW)",
+          "arrival_time": "00:50",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "10h 45m",
+          "stops": 1,
+          "airline": "Turkish Airlines",
+          "flight_number": "TK1982"
+        },
+        "inbound": {
+          "date": "2025-12-05",
+          "departure_time": "09:25",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "16:10",
+          "arrival_airport": "London Gatwick (LGW)",
+          "duration": "10h 45m",
+          "stops": 1,
+          "airline": "Turkish Airlines",
+          "flight_number": "TK759"
+        },
+        "price": {
+          "amount": 1479,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      },
+      {
+        "id": 10,
+        "outbound": {
+          "date": "2025-11-30",
+          "departure_time": "10:05",
+          "departure_airport": "London Gatwick (LGW)",
+          "arrival_time": "00:50",
+          "arrival_airport": "Dubai (DXB)",
+          "duration": "10h 45m",
+          "stops": 1,
+          "airline": "Turkish Airlines",
+          "flight_number": "TK1982"
+        },
+        "inbound": {
+          "date": "2025-12-05",
+          "departure_time": "15:00",
+          "departure_airport": "Dubai (DXB)",
+          "arrival_time": "22:35",
+          "arrival_airport": "London Gatwick (LGW)",
+          "duration": "11h 35m",
+          "stops": 1,
+          "airline": "Turkish Airlines",
+          "flight_number": "TK785"
+        },
+        "price": {
+          "amount": 1479,
+          "currency": "GBP",
+          "per_person": true
+        },
+        "package_type": "Flights + Hotel"
+      }
+    ],
+    "metadata": {
+      "total_results": 10,
+      "price_range": {
+        "min": 1389,
+        "max": 1479,
+        "currency": "GBP"
+      },
+      "airlines": ["ajet", "Saudia", "Eurowings", "Turkish Airlines"],
+      "departure_airports": [
+        "London Stansted (STN)",
+        "Manchester (MAN)",
+        "London Gatwick (LGW)"
+      ],
+      "all_include_hotel": true,
+      "all_have_stops": true
+    }
+  }
+}
