@@ -1,0 +1,10 @@
+# Nuxt build artifacts
+.nuxt/
+dist/
+
+# Dependencies
+node_modules/
+
+# System
+.DS_Store
+.env
