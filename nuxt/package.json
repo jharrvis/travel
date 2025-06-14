@@ -1,0 +1,12 @@
+{
+  "name": "travel-nuxt",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "nuxt": "^2.17.0"
+  }
+}
