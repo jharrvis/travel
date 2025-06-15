@@ -1,0 +1,474 @@
+{
+  "contact": {
+    "phone": "01204 269010",
+    "hours": "Open until 18:00"
+  },
+  "button": {
+    "text": "Plan Your Next Holiday"
+  },
+  "logo": {
+    "url": "/",
+    "src": "https://res.cloudinary.com/destinology/image/upload/v1726650313/Logos/Base/Black/Black_Wide_SVG.svg",
+    "alt": "Destinology"
+  },
+  "menu": [
+    {
+      "label": "Destinations",
+      "type": "dropdown",
+      "columns": [
+        {
+          "title": "Indian Ocean",
+          "links": [
+            {
+              "label": "Maldives",
+              "url": "/destinations/indian-ocean/maldives/hotels"
+            },
+            {
+              "label": "Mauritius",
+              "url": "/destinations/indian-ocean/mauritius/hotels"
+            },
+            {
+              "label": "Seychelles",
+              "url": "/destinations/indian-ocean/seychelles/hotels"
+            },
+            {
+              "label": "Sri Lanka",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/sri-lanka"
+            },
+            {
+              "label": "India",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/india"
+            }
+          ]
+        },
+        {
+          "title": "Middle East",
+          "links": [
+            {
+              "label": "Dubai",
+              "url": "/destinations/united-arab-emirates/dubai/hotels"
+            },
+            {
+              "label": "Abu Dhabi",
+              "url": "/destinations/united-arab-emirates/abu-dhabi/hotels"
+            },
+            {
+              "label": "Oman",
+              "url": "/destinations/middle-east/oman/hotels"
+            },
+            {
+              "label": "Fujairah",
+              "url": "/destinations/united-arab-emirates/fujairah/hotels"
+            },
+            {
+              "label": "Ras al Khaimah",
+              "url": "/destinations/middle-east/ras-al-khaimah/hotels"
+            },
+            {
+              "label": "Zighy Bay",
+              "url": "/destinations/middle-east/zighy-bay/hotels"
+            },
+            {
+              "label": "Qatar",
+              "url": "/destinations/middle-east/qatar/hotels"
+            },
+            {
+              "label": "Saudi Arabia",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/saudi-arabia"
+            },
+            {
+              "label": "AlUla",
+              "url": "https://tailor-made-holidays.destinology.co.uk/destination/alula"
+            }
+          ]
+        },
+        {
+          "title": "Europe",
+          "links": [
+            {
+              "label": "Greece",
+              "url": "/destinations/europe/greece/hotels"
+            },
+            {
+              "label": "Spain",
+              "url": "/destinations/europe/spain/hotels"
+            },
+            {
+              "label": "Cyprus",
+              "url": "/destinations/europe/cyprus/hotels"
+            },
+            {
+              "label": "Portugal",
+              "url": "/destinations/europe/portugal/hotels"
+            },
+            {
+              "label": "Turkey",
+              "url": "/destinations/europe/turkey/hotels"
+            },
+            {
+              "label": "Croatia",
+              "url": "/destinations/europe/croatia/hotels"
+            },
+            {
+              "label": "Italy",
+              "url": "/destinations/europe/italy/hotels"
+            },
+            {
+              "label": "Lapland",
+              "url": "/destinations/europe/lapland/hotels"
+            },
+            {
+              "label": "Switzerland",
+              "url": "/destinations/europe/switzerland/hotels"
+            },
+            {
+              "label": "Malta",
+              "url": "/destinations/europe/malta/hotels"
+            },
+            {
+              "label": "Montenegro",
+              "url": "/destinations/europe/montenegro/hotels"
+            },
+            {
+              "label": "Iceland",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/iceland"
+            },
+            {
+              "label": "France",
+              "url": "/destinations/europe/france/hotels"
+            },
+            {
+              "label": "Finland",
+              "url": "/destinations/europe/finland/hotels"
+            }
+          ]
+        },
+        {
+          "title": "Caribbean & Mexico",
+          "links": [
+            {
+              "label": "Barbados",
+              "url": "/destinations/caribbean/barbados/hotels"
+            },
+            {
+              "label": "Saint Lucia",
+              "url": "/destinations/caribbean/saint-lucia/hotels"
+            },
+            {
+              "label": "Antigua and Barbuda",
+              "url": "/destinations/caribbean/antigua-and-barbuda/hotels"
+            },
+            {
+              "label": "Aruba Dutch Antilles",
+              "url": "/destinations/caribbean/aruba-dutch-antilles/hotels"
+            },
+            {
+              "label": "Grenada",
+              "url": "/destinations/caribbean/grenada/hotels"
+            },
+            {
+              "label": "Jamaica",
+              "url": "/destinations/caribbean/jamaica/hotels"
+            },
+            {
+              "label": "St Barths",
+              "url": "/destinations/caribbean/st-barths/hotels"
+            },
+            {
+              "label": "Dominican Republic",
+              "url": "/destinations/caribbean/dominican-republic/hotels"
+            },
+            {
+              "label": "St Vincent and the Grenadines",
+              "url": "/destinations/caribbean/st-vincent-and-the-grenadines/hotels"
+            },
+            {
+              "label": "Anguilla",
+              "url": "/destinations/caribbean/anguilla/hotels"
+            },
+            {
+              "label": "British Virgin Islands",
+              "url": "/destinations/caribbean/british-virgin-islands/hotels"
+            },
+            {
+              "label": "Turks and Caicos",
+              "url": "/destinations/caribbean/turks-and-caicos/hotels"
+            },
+            {
+              "label": "Bermuda",
+              "url": "/destinations/caribbean/bermuda/hotels"
+            },
+            {
+              "label": "St Kitts and Nevis",
+              "url": "/destinations/caribbean/st-kitts-and-nevis/hotels"
+            },
+            {
+              "label": "Bahamas",
+              "url": "/destinations/caribbean/bahamas/hotels"
+            },
+            {
+              "label": "Mexico",
+              "url": "/destinations/caribbean/mexico/hotels"
+            }
+          ]
+        },
+        {
+          "title": "Far East",
+          "links": [
+            {
+              "label": "Thailand",
+              "url": "/destinations/far-east/thailand/hotels"
+            },
+            {
+              "label": "Indonesia",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/indonesia"
+            },
+            {
+              "label": "Vietnam",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/vietnam"
+            },
+            {
+              "label": "Malaysia",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/malaysia"
+            },
+            {
+              "label": "Cambodia",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/cambodia"
+            },
+            {
+              "label": "Singapore",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/singapore"
+            },
+            {
+              "label": "Japan",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/japan"
+            },
+            {
+              "label": "Philippines",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/philippines"
+            },
+            {
+              "label": "Hong Kong",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/hong-kong"
+            }
+          ]
+        },
+        {
+          "title": "North America",
+          "links": [
+            {
+              "label": "USA",
+              "url": "/destinations/north-america/usa/hotels"
+            },
+            {
+              "label": "Canada",
+              "url": "/destinations/north-america/canada/hotels"
+            }
+          ]
+        },
+        {
+          "title": "Africa",
+          "links": [
+            {
+              "label": "South Africa",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/south-africa"
+            },
+            {
+              "label": "Kenya",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/kenya"
+            },
+            {
+              "label": "Tanzania and Zanzibar",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/tanzania"
+            },
+            {
+              "label": "Morocco",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/morocco"
+            },
+            {
+              "label": "Botswana",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/botswana"
+            },
+            {
+              "label": "Zimbabwe",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/zimbabwe"
+            },
+            {
+              "label": "Rwanda",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/rwanda"
+            }
+          ]
+        },
+        {
+          "title": "Australasia",
+          "links": [
+            {
+              "label": "Australia",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/australia"
+            },
+            {
+              "label": "New Zealand",
+              "url": "https://tailor-made-holidays.destinology.co.uk/country/new-zealand"
+            }
+          ]
+        },
+        {
+          "title": "Cruise",
+          "links": [
+            {
+              "label": "All Destinations",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations"
+            },
+            {
+              "label": "Mediterranean",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/mediterranean?regions=Mediterranean&sortby=recommended"
+            },
+            {
+              "label": "Caribbean",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/caribbean?regions=Caribbean&sortby=recommended"
+            },
+            {
+              "label": "Northern Europe",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/northern-europe?regions=Northern%20Europe&sortby=recommended"
+            },
+            {
+              "label": "Asia & Far East",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/asia?regions=Asia&sortby=recommended"
+            },
+            {
+              "label": "South America",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/south-america?regions=South%20America&sortby=recommended"
+            },
+            {
+              "label": "Alaska",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/alaska?regions=Alaska&sortby=recommended"
+            },
+            {
+              "label": "North America",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/north-america?sortby=recommended"
+            },
+            {
+              "label": "Middle East & Indian Ocean",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/middle-east?regions=Middle%20East%2CIndian%20Ocean&sortby=recommended"
+            },
+            {
+              "label": "Australasia & South Pacific",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/australasia?regions=Australia%20%26%20New%20Zealand&sortby=recommended"
+            },
+            {
+              "label": "Antarctica",
+              "url": "https://cruise.destinology.co.uk/cruise-destinations/antarctica?regions=Antarctica&sortby=recommended"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "label": "View All Destinations",
+        "url": "/destinations"
+      }
+    },
+    {
+      "label": "Holiday Types",
+      "type": "dropdown",
+      "links": [
+        {
+          "label": "All Inclusive Holidays",
+          "url": "/holidays/all-inclusive"
+        },
+        {
+          "label": "Family Holidays",
+          "url": "/holidays/family-holidays"
+        },
+        {
+          "label": "Multi-Centre Holidays",
+          "url": "/holidays/multi-centre-holidays"
+        },
+        {
+          "label": "Exclusive Benefits",
+          "url": "/holidays/exclusive-benefits"
+        },
+        {
+          "label": "Last Minute Deals",
+          "url": "/holidays/last-minute-deals"
+        },
+        {
+          "label": "Free Child Place Holidays",
+          "url": "/holidays/free-child-place-holidays"
+        },
+        {
+          "label": "School Holiday Travel Deals",
+          "url": "/holidays/school-holiday-travel-deals"
+        },
+        {
+          "label": "Summer Holidays",
+          "url": "/holidays/summer-holidays"
+        },
+        {
+          "label": "Adult Only Holidays",
+          "url": "/holidays/luxury-adult-only-holidays"
+        },
+        {
+          "label": "Business & First Class Flights",
+          "url": "/holidays/business-class-and-first-class-flights-deals"
+        },
+        {
+          "label": "Luxury Winter Sun Holidays",
+          "url": "/holidays/luxury-winter-sun-holidays"
+        },
+        {
+          "label": "Luxury 2025 Holidays",
+          "url": "/holidays/luxury-2025-holidays"
+        },
+        {
+          "label": "Hotels With Private Pools",
+          "url": "/holidays/hotels-with-private-pools"
+        },
+        {
+          "label": "Villa Holidays",
+          "url": "/holidays/villa-holidays"
+        },
+        {
+          "label": "Honeymoons",
+          "url": "/holidays/honeymoons"
+        },
+        {
+          "label": "Weddings Abroad",
+          "url": "/holidays/luxury-weddings-abroad"
+        },
+        {
+          "label": "City Breaks",
+          "url": "/holidays/city-breaks"
+        }
+      ]
+    },
+    {
+      "label": "Offers",
+      "type": "link",
+      "url": "/holiday-offers"
+    },
+    {
+      "label": "Luxury Cruise",
+      "type": "link",
+      "url": "https://cruise.destinology.co.uk"
+    },
+    {
+      "label": "Tailor-Made Holidays",
+      "type": "link",
+      "url": "https://tailor-made-holidays.destinology.co.uk"
+    },
+    {
+      "label": "Inspiration",
+      "type": "dropdown",
+      "links": [
+        {
+          "label": "Blog",
+          "url": "/blog"
+        },
+        {
+          "label": "Friends of Destinology",
+          "url": "/holidays/friends-of-destinology"
+        }
+      ]
+    }
+  ]
+}

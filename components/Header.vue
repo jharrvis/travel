@@ -23,7 +23,7 @@
               </svg>
               <a
                 id="call-us"
-                href="tel:01204269010"
+                :href="`tel:${menuData.contact.phone}`"
                 class="InfinityNumber trans"
                 data-v-6abff7dc
               >
@@ -31,7 +31,7 @@
                   class="InfinityNumber nav-header-details-text"
                   data-v-6abff7dc
                 >
-                  01204&nbsp;269010
+                  {{ formatPhoneNumber(menuData.contact.phone) }}
                 </span>
               </a>
             </span>
@@ -55,7 +55,7 @@
                 />
               </svg>
               <span class="nav-header-details-text" data-v-6abff7dc>
-                Open until 19:00
+                {{ menuData.contact.hours }}
               </span>
             </span>
           </div>
@@ -67,7 +67,7 @@
           @click="planYourHoliday"
         >
           <span class="top-plan-text" data-v-6abff7dc>
-            Plan Your Next Holiday
+            {{ menuData.button.text }}
           </span>
           <svg
             aria-hidden="true"
@@ -89,269 +89,155 @@
       </div>
 
       <div class="main-nav-container" data-v-6abff7dc>
-        <!-- Destinations Dropdown -->
-        <div
-          class="nav-link trans"
-          data-dropdown="destinations"
-          data-v-6abff7dc
-          @mouseenter="showDropdown = 'destinations'"
-          @mouseleave="showDropdown = null"
-        >
-          <span data-v-6abff7dc>Destinations</span>
-          <div
-            v-show="showDropdown === 'destinations'"
-            class="dropdown dest fixed-dropdown"
-            data-v-6abff7dc
-          >
-            <div class="dropdown-large-container" data-v-6abff7dc>
-              <div class="dropdown-column-container" data-v-6abff7dc>
-                <div class="dropdown-column" data-v-6abff7dc>
-                  <a
-                    href="/destinations/indian-ocean/hotels"
-                    class="dropdown-link top-level"
-                    data-v-6abff7dc
-                  >
-                    Indian Ocean
-                  </a>
-                  <div class="sub-dest-links" data-v-6abff7dc>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/indian-ocean/maldives/hotels"
-                        >Maldives</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/indian-ocean/mauritius/hotels"
-                        >Mauritius</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/indian-ocean/seychelles/hotels"
-                        >Seychelles</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a
-                        href="https://tailor-made-holidays.destinology.co.uk/country/sri-lanka"
-                        >Sri Lanka</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a
-                        href="https://tailor-made-holidays.destinology.co.uk/country/india"
-                        >India</a
-                      >
-                    </div>
-                  </div>
-                </div>
+        <!-- Menu before logo: Destinations, Holiday Types, Offers -->
+        <template v-for="(item, idx) in menuData.menu">
+          <!-- Show only first 3 items before logo -->
+          <template v-if="idx < 3">
+            <!-- Dropdown Items -->
+            <div
+              v-if="item.type === 'dropdown'"
+              :key="`dropdown-${idx}`"
+              class="nav-link trans"
+              :data-dropdown="getDataDropdownValue(item.label)"
+              data-v-6abff7dc
+              @mouseenter="showDropdown = getDataDropdownValue(item.label)"
+              @mouseleave="showDropdown = null"
+            >
+              <span data-v-6abff7dc>{{ item.label }}</span>
 
-                <div class="dropdown-column" data-v-6abff7dc>
-                  <a
-                    href="/destinations/middle-east/hotels"
-                    class="dropdown-link top-level"
-                    data-v-6abff7dc
-                  >
-                    Middle East
-                  </a>
-                  <div class="sub-dest-links" data-v-6abff7dc>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/united-arab-emirates/dubai/hotels"
-                        >Dubai</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
+              <!-- Multi-column dropdown (like Destinations) -->
+              <div
+                v-if="item.columns"
+                v-show="showDropdown === getDataDropdownValue(item.label)"
+                class="dropdown dest fixed-dropdown"
+                data-v-6abff7dc
+              >
+                <div class="dropdown-large-container" data-v-6abff7dc>
+                  <div class="dropdown-column-container" data-v-6abff7dc>
+                    <div
+                      v-for="(col, cIdx) in item.columns"
+                      :key="cIdx"
+                      class="dropdown-column"
+                      data-v-6abff7dc
+                    >
                       <a
-                        href="/destinations/united-arab-emirates/abu-dhabi/hotels"
-                        >Abu Dhabi</a
+                        :href="col.links[0].url"
+                        class="dropdown-link top-level"
+                        data-v-6abff7dc
                       >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/middle-east/oman/hotels">Oman</a>
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/middle-east/qatar/hotels">Qatar</a>
+                        {{ col.title }}
+                      </a>
+                      <div class="sub-dest-links" data-v-6abff7dc>
+                        <div
+                          v-for="(link, lIdx) in col.links"
+                          :key="lIdx"
+                          class="dropdown-link sub-dest"
+                          data-v-6abff7dc
+                        >
+                          <a :href="link.url">{{ link.label }}</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <a
+                  v-if="item.footer"
+                  :href="item.footer.url"
+                  class="dropdown-footer view-dest"
+                  data-v-6abff7dc
+                >
+                  {{ item.footer.label }}
+                </a>
+              </div>
 
-                <div class="dropdown-column" data-v-6abff7dc>
-                  <a
-                    href="/destinations/europe/hotels"
-                    class="dropdown-link top-level"
-                    data-v-6abff7dc
-                  >
-                    Europe
-                  </a>
-                  <div class="sub-dest-links" data-v-6abff7dc>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/europe/greece/hotels">Greece</a>
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/europe/spain/hotels">Spain</a>
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/europe/cyprus/hotels">Cyprus</a>
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/europe/portugal/hotels"
-                        >Portugal</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/europe/italy/hotels">Italy</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="dropdown-column" data-v-6abff7dc>
-                  <a
-                    href="/destinations/caribbean/hotels"
-                    class="dropdown-link top-level"
-                    data-v-6abff7dc
-                  >
-                    Caribbean & Mexico
-                  </a>
-                  <div class="sub-dest-links" data-v-6abff7dc>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/caribbean/barbados/hotels"
-                        >Barbados</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/caribbean/saint-lucia/hotels"
-                        >Saint Lucia</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/caribbean/jamaica/hotels"
-                        >Jamaica</a
-                      >
-                    </div>
-                    <div class="dropdown-link sub-dest" data-v-6abff7dc>
-                      <a href="/destinations/caribbean/mexico/hotels">Mexico</a>
-                    </div>
-                  </div>
-                </div>
+              <!-- Simple dropdown (like Holiday Types) -->
+              <div
+                v-else
+                v-show="showDropdown === getDataDropdownValue(item.label)"
+                class="dropdown types fixed-dropdown"
+                data-v-6abff7dc
+              >
+                <a
+                  v-for="(link, lIdx) in item.links"
+                  :key="lIdx"
+                  :href="link.url"
+                  class="dropdown-link sub-dest"
+                  data-v-6abff7dc
+                >
+                  {{ link.label }}
+                </a>
               </div>
             </div>
-            <a
-              href="/destinations"
-              class="dropdown-footer view-dest"
-              data-v-6abff7dc
-            >
-              View All Destinations
-            </a>
-          </div>
-        </div>
 
-        <!-- Holiday Types Dropdown -->
-        <div
-          class="nav-link trans"
-          data-dropdown="holiday-types"
-          data-v-6abff7dc
-          @mouseenter="showDropdown = 'holiday-types'"
-          @mouseleave="showDropdown = null"
-        >
-          <span data-v-6abff7dc>Holiday Types</span>
-          <div
-            v-show="showDropdown === 'holiday-types'"
-            class="dropdown types fixed-dropdown"
-            data-v-6abff7dc
-          >
+            <!-- Regular Link Items before logo -->
             <a
-              href="/holidays/all-inclusive"
-              class="dropdown-link sub-dest"
+              v-else-if="item.type === 'link'"
+              :key="`link-${idx}`"
+              :href="item.url"
+              class="nav-link trans"
               data-v-6abff7dc
             >
-              All Inclusive Holidays
+              {{ item.label }}
             </a>
-            <a
-              href="/holidays/family-holidays"
-              class="dropdown-link sub-dest"
-              data-v-6abff7dc
-            >
-              Family Holidays
-            </a>
-            <a
-              href="/holidays/luxury-adult-only-holidays"
-              class="dropdown-link sub-dest"
-              data-v-6abff7dc
-            >
-              Adult Only Holidays
-            </a>
-            <a
-              href="/holidays/honeymoons"
-              class="dropdown-link sub-dest"
-              data-v-6abff7dc
-            >
-              Honeymoons
-            </a>
-            <a
-              href="/holidays/city-breaks"
-              class="dropdown-link sub-dest"
-              data-v-6abff7dc
-            >
-              City Breaks
-            </a>
-          </div>
-        </div>
-
-        <!-- Offers Link -->
-        <a href="/holiday-offers" class="nav-link trans" data-v-6abff7dc>
-          Offers
-        </a>
+          </template>
+        </template>
 
         <!-- Logo -->
-        <nuxt-link to="/" class="logo" data-v-6abff7dc>
+        <nuxt-link :to="menuData.logo.url" class="logo" data-v-6abff7dc>
           <img
-            src="https://res.cloudinary.com/destinology/image/upload/v1726650313/Logos/Base/Black/Black_Wide_SVG.svg"
-            alt="Destinology"
+            :src="menuData.logo.src"
+            :alt="menuData.logo.alt"
             data-v-6abff7dc
           />
         </nuxt-link>
 
-        <!-- Other Links -->
-        <a
-          href="https://cruise.destinology.co.uk"
-          class="nav-link trans"
-          data-v-6abff7dc
-        >
-          Luxury Cruise
-        </a>
-        <a
-          href="https://tailor-made-holidays.destinology.co.uk"
-          class="nav-link trans"
-          data-v-6abff7dc
-        >
-          Tailor-Made Holidays
-        </a>
+        <!-- Menu after logo: Luxury Cruise, Tailor-Made Holidays, Inspiration -->
+        <template v-for="(item, idx) in menuData.menu">
+          <!-- Show items from index 3 onwards (after logo) -->
+          <template v-if="idx >= 3">
+            <!-- Dropdown Items after logo -->
+            <div
+              v-if="item.type === 'dropdown'"
+              :key="`dropdown-after-${idx}`"
+              class="nav-link trans"
+              :data-dropdown="getDataDropdownValue(item.label)"
+              data-v-6abff7dc
+              @mouseenter="showDropdown = getDataDropdownValue(item.label)"
+              @mouseleave="showDropdown = null"
+            >
+              <span data-v-6abff7dc>{{ item.label }}</span>
 
-        <!-- Inspiration Dropdown -->
-        <div
-          class="nav-link trans"
-          data-dropdown="inspiration"
-          data-v-6abff7dc
-          @mouseenter="showDropdown = 'inspiration'"
-          @mouseleave="showDropdown = null"
-        >
-          <span data-v-6abff7dc>Inspiration</span>
-          <div
-            v-show="showDropdown === 'inspiration'"
-            class="dropdown types fixed-dropdown"
-            style="right: 0px"
-            data-v-6abff7dc
-          >
-            <a href="/blog" class="dropdown-link sub-dest" data-v-6abff7dc>
-              Blog
-            </a>
+              <!-- Simple dropdown (like Inspiration) with right alignment -->
+              <div
+                v-show="showDropdown === getDataDropdownValue(item.label)"
+                class="dropdown types fixed-dropdown"
+                :style="item.label === 'Inspiration' ? 'right: 0px' : ''"
+                data-v-6abff7dc
+              >
+                <a
+                  v-for="(link, lIdx) in item.links"
+                  :key="lIdx"
+                  :href="link.url"
+                  class="dropdown-link sub-dest"
+                  data-v-6abff7dc
+                >
+                  {{ link.label }}
+                </a>
+              </div>
+            </div>
+
+            <!-- Regular Link Items after logo -->
             <a
-              href="/holidays/friends-of-destinology"
-              class="dropdown-link sub-dest"
+              v-else-if="item.type === 'link'"
+              :key="`link-after-${idx}`"
+              :href="item.url"
+              class="nav-link trans"
               data-v-6abff7dc
             >
-              Friends of Destinology
+              {{ item.label }}
             </a>
-          </div>
-        </div>
+          </template>
+        </template>
       </div>
     </nav>
     <div style="margin-top: 100px">&nbsp;</div>
@@ -359,11 +245,14 @@
 </template>
 
 <script>
+import menuData from "~/static/data/menu.json";
+
 export default {
   name: "AppHeader",
   data() {
     return {
       showDropdown: null,
+      menuData,
     };
   },
   methods: {
@@ -371,6 +260,13 @@ export default {
       alert(
         "Plan Your Next Holiday clicked! This would typically open a booking form or destination selector."
       );
+    },
+    formatPhoneNumber(phone) {
+      // Format phone number like "01204 269010"
+      return phone.replace(/(\d{5})(\d{6})/, "$1&nbsp;$2");
+    },
+    getDataDropdownValue(label) {
+      return label.toLowerCase().replace(/\s+/g, "-");
     },
   },
   mounted() {

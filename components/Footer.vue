@@ -114,9 +114,10 @@
             class="dot-digital-iframe"
             style="
               width: 100%;
-              border: none;
               height: 100px;
-              background-color: rgb(31, 31, 31);
+              border: 0;
+              outline: none;
+              background-color: #1f1f1f;
             "
           ></iframe>
         </div>
