@@ -32,7 +32,8 @@ export default {
   },
 
   // Global CSS
-  css: ["~/assets/css/main.css"],
+  // css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/style.css", "~/assets/css/custom.css"],
 
   // Auto import components
   components: true,
