@@ -64,7 +64,7 @@
           id="planYourDestCTA"
           class="top-plan-your-dest-button"
           data-v-6abff7dc
-          @click="planYourHoliday"
+          @click="$emit('open-enquiry-modal')"
         >
           <span class="top-plan-text" data-v-6abff7dc>
             {{ menuData.button.text }}
@@ -249,6 +249,7 @@ import menuData from "~/static/data/menu.json";
 
 export default {
   name: "AppHeader",
+  emits: ["open-enquiry-modal"],
   data() {
     return {
       showDropdown: null,
@@ -256,11 +257,6 @@ export default {
     };
   },
   methods: {
-    planYourHoliday() {
-      alert(
-        "Plan Your Next Holiday clicked! This would typically open a booking form or destination selector."
-      );
-    },
     formatPhoneNumber(phone) {
       // Format phone number like "01204 269010"
       return phone.replace(/(\d{5})(\d{6})/, "$1&nbsp;$2");

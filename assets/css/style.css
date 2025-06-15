@@ -6660,3 +6660,222 @@ svg.svg-inline--fa:not(:root) {
 .vd-picker__years li + li {
   margin-top: 2px;
 }
+
+/* fullscreen modal */
+.fullscreen-enquiry[data-v-3f212ead] {
+  background-color: #f7f7f7;
+  bottom: 0;
+  display: block;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2000000000;
+}
+
+.enquiry-side[data-v-3f212ead] {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1.5em;
+  position: relative;
+  position: sticky;
+  top: 0;
+  width: 360px;
+}
+
+.enquiry-content[data-v-3f212ead] {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.enquiry-title[data-v-3f212ead] {
+  font-family: the-seasons, serif;
+  text-align: center;
+}
+
+.enquiry-subtitle[data-v-3f212ead] {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.enquiry-modal[data-v-3f212ead] {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.enquiry-container[data-v-3f212ead] {
+  background-color: #fff;
+  display: flex;
+  height: 300px;
+  width: 80%;
+}
+
+.enquiry-form-label[data-v-3f212ead] {
+  color: var(--destinology-grey);
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+.enquiry-form-input[data-v-3f212ead] {
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.enquiry-form-input.valid[data-v-3f212ead] {
+  border: 2px solid #00ff2a;
+}
+
+.enquiry-form-input.invalid[data-v-3f212ead] {
+  border: 1px solid red;
+}
+
+.input-err-msg[data-v-3f212ead] {
+  color: red;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.enquiryForm > .row > .col-sm-6[data-v-3f212ead],
+.enquiryForm > .row > .col-xs-12[data-v-3f212ead] {
+  align-self: flex-end;
+}
+
+.submit-form-button[data-v-3f212ead] {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+
+.ef-text-area[data-v-3f212ead] {
+  height: 100px;
+}
+
+.enq-complete-item[data-v-3f212ead] {
+  margin-bottom: 2rem;
+}
+
+.enq-complete-container[data-v-3f212ead] {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.enq-complete-close-container[data-v-3f212ead] {
+  max-width: 200px;
+  width: 100%;
+}
+
+.enq-complete-title[data-v-3f212ead] {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.recaptcha-container[data-v-3f212ead] {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+@media (max-width: 767px) {
+  .enquiry-side[data-v-3f212ead] {
+    display: none;
+  }
+
+  .enquiry-modal[data-v-3f212ead] {
+    display: block;
+  }
+
+  .enquiry-subtitle[data-v-3f212ead] {
+    font-size: 0.7em;
+    font-weight: 500;
+  }
+
+  .enquiry-title[data-v-3f212ead] {
+    padding-top: 1em;
+  }
+
+  .enquiry-form-input[data-v-3f212ead] {
+    font-size: 0.9em;
+  }
+}
+
+.enquiry-enter-active[data-v-3f212ead],
+.enquiry-leave-active[data-v-3f212ead] {
+  transition: opacity 0.5s;
+}
+
+.enquiry-enter[data-v-3f212ead],
+.enquiry-leave-active[data-v-3f212ead] {
+  opacity: 0;
+}
+
+.loading-spinner {
+  animation: spinRight 0.8s linear infinite;
+  border-radius: 100%;
+  border-right: 4px solid var(--destinology-wine);
+  height: 8vmax;
+  width: 8vmax;
+}
+
+.loading-spinner:after,
+.loading-spinner:before {
+  animation: spinLeft 0.8s linear infinite;
+  border-left: 3px solid var(--destinology-wine);
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 6vmax;
+  left: calc(50% - 3vmax);
+  position: absolute;
+  top: calc(50% - 3vmax);
+  width: 6vmax;
+}
+
+.loading-spinner:after {
+  animation: none;
+  border: 0;
+  border-right: 2px solid var(--destinology-wine);
+  height: 4vmax;
+  left: calc(50% - 2vmax);
+  top: calc(50% - 2vmax);
+  width: 4vmax;
+}
+
+@keyframes spinLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(2turn);
+  }
+}
+
+@keyframes spinRight {
+  0% {
+    transform: rotate(1turn);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}

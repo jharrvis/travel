@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <Header @open-enquiry-modal="showEnquiryModal" />
 
     <!-- Sticky CTA -->
     <div class="sticky-cta-container" style="" data-v-7b6ed19f>
@@ -25,7 +25,7 @@
         <span data-v-7b6ed19f>Back to Top</span>
       </div>
       <a
-        href="tel:01204269010"
+        href="tel:01204 269010"
         id="CTACall"
         class="sticky-cta-item InfinityNumber"
         data-v-7b6ed19f
@@ -82,6 +82,14 @@
     </main>
 
     <Footer />
+
+    <!-- Enquiry Modal Component -->
+    <EnquiryModal
+      :visible="isModalVisible"
+      :phone-number="phoneNumber"
+      @close="closeModal"
+      @submit="handleFormSubmit"
+    />
   </div>
 </template>
 
@@ -89,12 +97,20 @@
 import Header from "@/components/Header.vue";
 import Search from "@/components/Search.vue";
 import Footer from "@/components/Footer.vue";
+import EnquiryModal from "@/components/EnquiryModal.vue";
 
 export default {
   components: {
     Header,
     Search,
     Footer,
+    EnquiryModal,
+  },
+  data() {
+    return {
+      isModalVisible: false,
+      phoneNumber: "01204 269010",
+    };
   },
   mounted() {
     // Sticky CTA Functionality
@@ -108,7 +124,25 @@ export default {
       });
     },
     openEnquiry() {
-      alert("Enquiry button clicked! You can add your custom logic here.");
+      // Open the modal directly
+      this.showEnquiryModal();
+    },
+    showEnquiryModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    handleFormSubmit(formData) {
+      // Handle form submission here
+      console.log("Form submitted:", formData);
+
+      // Here you can add API call to submit the form
+      // Example:
+      // await this.$api.submitEnquiry(formData);
+
+      // You can also add analytics tracking here
+      // this.$gtag('event', 'enquiry_submitted', { ...formData });
     },
     initStickyCTA() {
       const stickyContainer = document.querySelector(".sticky-cta-container");
