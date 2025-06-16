@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hotel-detail-page">
     <Header @open-enquiry-modal="showEnquiryModal" />
 
     <!-- Sticky CTA -->
@@ -101,6 +101,7 @@
             @toggle-favorite="handleToggleFavorite"
             @show-hotel-details="showHotelDetails"
             @show-map="showMap"
+            @show-alternative-flights="scrollToAlternativeFlights"
           />
 
           <!-- Refine Your Holiday -->
@@ -110,20 +111,6 @@
             @edit-field="handleEditField"
             @guarantee-clicked="showGuaranteeInfo"
           />
-
-          <!-- Alternative Flights Section - Always visible below hotel info -->
-          <div
-            id="alternative-flights-section"
-            class="alternative-flights-inline"
-          >
-            <AlternativeFlightsInline
-              :current-flight="
-                flightData.search_results.flights[currentFlightIndex]
-              "
-              :all-flights="flightData.search_results.flights"
-              @flight-selected="handleFlightSelected"
-            />
-          </div>
         </div>
 
         <!-- Middle Column - Calendar -->
@@ -144,6 +131,20 @@
             @payment-option-changed="handlePaymentOptionChanged"
           />
         </div>
+      </div>
+
+      <!-- Alternative Flights Section - Full width below main content -->
+      <div
+        id="alternative-flights-section"
+        class="alternative-flights-full-width"
+      >
+        <AlternativeFlights
+          :current-flight="
+            flightData.search_results.flights[currentFlightIndex]
+          "
+          :all-flights="flightData.search_results.flights"
+          @flight-selected="handleFlightSelected"
+        />
       </div>
     </div>
 
@@ -167,7 +168,7 @@ import HotelDetailHeader from "@/components/HotelDetailHeader.vue";
 import HotelRefineForm from "@/components/HotelRefineForm.vue";
 import HotelCalendar from "@/components/HotelCalendar.vue";
 import HotelOfferCard from "@/components/HotelOfferCard.vue";
-import AlternativeFlightsInline from "@/components/AlternativeFlights.vue";
+import AlternativeFlights from "@/components/AlternativeFlights.vue";
 import flightData from "@/static/data/flights.json";
 
 export default {
@@ -180,7 +181,7 @@ export default {
     HotelRefineForm,
     HotelCalendar,
     HotelOfferCard,
-    AlternativeFlightsInline,
+    AlternativeFlights,
   },
   data() {
     return {
@@ -459,6 +460,10 @@ export default {
 
 <style scoped>
 /* Container */
+.hotel-detail-page {
+  /* Root container styles */
+}
+
 .page-section {
   padding: 60px 20px;
   max-width: 1200px;
@@ -520,9 +525,15 @@ export default {
   flex-shrink: 0;
 }
 
-/* Alternative Flights Inline Section */
-.alternative-flights-inline {
-  margin-top: 30px;
+/* Alternative Flights Section */
+.alternative-flights-separator {
+  height: 1px;
+  background-color: #eee;
+  margin: 40px 0 30px 0;
+}
+
+.alternative-flights-full-width {
+  width: 100%;
   scroll-margin-top: 100px; /* Account for fixed header */
 }
 
@@ -568,7 +579,7 @@ export default {
     gap: 20px;
   }
 
-  .alternative-flights-inline {
+  .alternative-flights-full-width {
     margin-top: 20px;
   }
 }

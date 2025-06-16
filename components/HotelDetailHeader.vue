@@ -36,6 +36,9 @@
           Hotel details
         </span>
         <span class="action-link" @click="$emit('show-map')"> 🗺️ Map </span>
+        <span class="action-link" @click="$emit('show-alternative-flights')">
+          ✈️ Alternative flights
+        </span>
       </div>
     </div>
   </div>
@@ -64,7 +67,12 @@ export default {
       default: false,
     },
   },
-  emits: ["toggle-favorite", "show-hotel-details", "show-map"],
+  emits: [
+    "toggle-favorite",
+    "show-hotel-details",
+    "show-map",
+    "show-alternative-flights",
+  ],
   data() {
     return {
       isFavorite: this.initialFavorite,
@@ -192,6 +200,7 @@ export default {
 .hotel-actions {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .action-link {
