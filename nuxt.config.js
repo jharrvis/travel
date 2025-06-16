@@ -1,4 +1,6 @@
 export default {
+  target: "static",
+
   // Global page headers
   head: {
     title: "Destinology - Luxury Holidays & Travel",
@@ -33,7 +35,11 @@ export default {
 
   // Global CSS
   // css: ["~/assets/css/main.css"],
-  css: ["~/assets/css/style.css", "~/assets/css/custom.css"],
+  css: [
+    "~/assets/css/style.css",
+    "~/assets/css/custom.css",
+    "~/assets/css/flights.css",
+  ],
 
   // Auto import components
   components: true,

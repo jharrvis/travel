@@ -110,6 +110,20 @@
             @edit-field="handleEditField"
             @guarantee-clicked="showGuaranteeInfo"
           />
+
+          <!-- Alternative Flights Section - Always visible below hotel info -->
+          <div
+            id="alternative-flights-section"
+            class="alternative-flights-inline"
+          >
+            <AlternativeFlightsInline
+              :current-flight="
+                flightData.search_results.flights[currentFlightIndex]
+              "
+              :all-flights="flightData.search_results.flights"
+              @flight-selected="handleFlightSelected"
+            />
+          </div>
         </div>
 
         <!-- Middle Column - Calendar -->
@@ -126,7 +140,7 @@
           <HotelOfferCard
             :offer-data="currentOffer"
             @select-holiday="handleSelectHoliday"
-            @show-alternative-flights="showAlternativeFlights"
+            @show-alternative-flights="scrollToAlternativeFlights"
             @payment-option-changed="handlePaymentOptionChanged"
           />
         </div>
@@ -142,14 +156,6 @@
       @close="closeModal"
       @submit="handleFormSubmit"
     />
-
-    <!-- Alternative Flights Modal Component -->
-    <AlternativeFlights
-      :visible="showAlternativeFlightsModal"
-      :current-flight="flightData.search_results.flights[currentFlightIndex]"
-      @close="closeAlternativeFlightsModal"
-      @flight-selected="handleFlightSelected"
-    />
   </div>
 </template>
 
@@ -161,7 +167,7 @@ import HotelDetailHeader from "@/components/HotelDetailHeader.vue";
 import HotelRefineForm from "@/components/HotelRefineForm.vue";
 import HotelCalendar from "@/components/HotelCalendar.vue";
 import HotelOfferCard from "@/components/HotelOfferCard.vue";
-import AlternativeFlights from "@/components/AlternativeFlights.vue";
+import AlternativeFlightsInline from "@/components/AlternativeFlights.vue";
 import flightData from "@/static/data/flights.json";
 
 export default {
@@ -174,7 +180,7 @@ export default {
     HotelRefineForm,
     HotelCalendar,
     HotelOfferCard,
-    AlternativeFlights,
+    AlternativeFlightsInline,
   },
   data() {
     return {
@@ -186,7 +192,6 @@ export default {
       selectedDate: { day: 30, month: 10, year: 2025 },
       selectedPaymentOption: "",
       currentFlightIndex: 0, // Index flight yang sedang aktif
-      showAlternativeFlightsModal: false,
       tabs: [
         { id: "flights-hotel", label: "Flights + Hotel" },
         { id: "hotel-only", label: "Hotel only" },
@@ -309,6 +314,18 @@ export default {
         behavior: "smooth",
       });
     },
+
+    // Scroll to Alternative Flights section
+    scrollToAlternativeFlights() {
+      const element = document.getElementById("alternative-flights-section");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    },
+
     initStickyCTA() {
       const stickyContainer = document.querySelector(".sticky-cta-container");
       const scrollThreshold = 300;
@@ -385,14 +402,7 @@ export default {
       alert("Proceeding to booking...");
     },
 
-    // Alternative Flights methods
-    showAlternativeFlights(offerData) {
-      console.log("Show alternative flights:", offerData);
-      this.showAlternativeFlightsModal = true;
-    },
-    closeAlternativeFlightsModal() {
-      this.showAlternativeFlightsModal = false;
-    },
+    // Flight methods
     handleFlightSelected(selectedFlight) {
       console.log("Flight selected from alternatives:", selectedFlight);
 
@@ -510,6 +520,12 @@ export default {
   flex-shrink: 0;
 }
 
+/* Alternative Flights Inline Section */
+.alternative-flights-inline {
+  margin-top: 30px;
+  scroll-margin-top: 100px; /* Account for fixed header */
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .content-wrapper {
@@ -551,7 +567,9 @@ export default {
   .content-wrapper {
     gap: 20px;
   }
-}
 
-/* Sticky CTA styles are already included in main CSS */
+  .alternative-flights-inline {
+    margin-top: 20px;
+  }
+}
 </style>
